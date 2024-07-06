@@ -76,11 +76,11 @@ function App() {
                 <p id='priceText'>$ {product.price}</p>
               </div>
 
-              <Link to={`/products/${product.id}`}>
+              <a href='./public/product.html'>
                 <button className="buttonViewMore rounded-full">
                   View more <img src="./src/images/arrowIcon.svg" alt="arrowIcon" />
                 </button>
-              </Link>
+              </a>
               
             </div>
           </div>
