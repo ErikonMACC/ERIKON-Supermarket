@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #000000;
+  background-color: var(--quinary-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --primary-color: #0E243F;
+  --secondary-color: #3F72AF;
+  --terniary-color: #8CB7EC;
+  --quaternary-color: #DBE2EF;
+  --quinary-color: #F9F7F7;
+}
+
+header {
+  background-color: var(--terniary-color);
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0px;
+  place-items: center;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.searchBar{
+  width: 100%;
+  padding-left: 30px;
+  background: url(./images/searchIcon.svg) no-repeat left;
+  background-color: #DBE2EF;
+  background-position: 5px;
+  background-size: 20px;
+}
+
+
+.button {
+  display: flex;
+  align-items: center;
+  background-color: var(--secondary-color);
+  height: 45px;
+  padding: 0;
+}
+
+.navCategories {
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+}
+
+.buttonCategory p{
+  font-family: "Roboto";
+  font-size: 11px;
+}
+
+select, option {
+  font-family: "Roboto";
+}
+
+option{
+  font-size: 14px;
+}
+
+select {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.buttonCategory {
+  background-color: var(--quaternary-color);
+  min-width: 100px;
+  padding: 7px 10px;
+  margin: 0px 5px 0px 0px
+}
+
+#selectCategory{
+  padding: 7px 10px;
+}
+
+.title {
+  font-family: "Roboto";
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--primary-color)
+}
+
+.itemCard {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: var(--quaternary-color);
+  border-radius: 5px;
+  min-height: 65vh;
+}
+
+#itemButton {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.imageItem{
+  height: 40vh;
+  user-select: none;
+}
+
+.box{
+  width: 80%;
+}
+
+.boxText {
+  margin: 10px 0px;
+}
+
+.buttonViewMore {
+  display: flex;
+  background-color: var(--terniary-color);
+  padding: 6px 10px;
+  height: 5vh;
+  margin: 0px 0px 20px 0px;
+}
+
+#name {
+  font-family: "Roboto";
+  color: var(--primary-color);
+  font-size: 16px;
+}
+
+#priceText {
+  font-family: "Roboto";
+  color: var(--primary-color);
+  font-size: 28px;
+  font-weight: 600;
+}
+
+footer {
+  margin-top: 10vh;
+  width: 100%;
+  background-color: var(--secondary-color);
+}
+
+footer p {
+  color: var(--quinary-color);
+  font-size: 18px;
+  font-family: "Roboto";
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
