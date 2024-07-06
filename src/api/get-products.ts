@@ -19,11 +19,6 @@ export async function getProducts() {
 }
 
 export async function getCategories() {
-    const response = await api.get<{ category: string }>('/products/category-list')
+    const response = await api.get<{ category: string[] }>('/products/category-list')
     return response.data
-}
-
-
-export async function getProductsById() {
-    
 }

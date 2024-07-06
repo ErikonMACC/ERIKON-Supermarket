@@ -5,7 +5,7 @@ import { useQuery } from 'react-query'
 function App() {
 
   const { data: productsData, isLoading: productsLoading } = useQuery(['products'], getProducts);
-  const { data: categoriesData, isLoading: categoriesLoading } = useQuery(['category'], getCategories);
+  const { data: categoriesData, isLoading: categoriesLoading } = useQuery(['categories'], getCategories);
   
 
   if (productsLoading || categoriesLoading) {
@@ -20,41 +20,11 @@ function App() {
     <>
       <nav className='container mx-auto flex items-center gap-2 navCategories'>
         <div>
-          <button className="buttonCategory rounded-full">
-            {categoriesData.slice(0, 1)?.map((category: string) => (
-              <p>{category}</p>
-            ))}
-          </button>
-          <button className="buttonCategory rounded-full">
-            {categoriesData.slice(1, 2)?.map((category: string) => (
-              <p>{category}</p>
-            ))}
-          </button>
-          <button className="buttonCategory rounded-full">
-            {categoriesData.slice(2, 3)?.map((category: string) => (
-              <p>{category}</p>
-            ))}
-          </button>
-          <button className="buttonCategory rounded-full">
-            {categoriesData.slice(3, 4)?.map((category: string) => (
-              <p>{category}</p>
-            ))}
-          </button>
-          <button className="buttonCategory rounded-full">
-            {categoriesData.slice(4, 5)?.map((category: string) => (
-              <p>{category}</p>
-            ))}
-          </button>
-          <button className="buttonCategory rounded-full">
-            {categoriesData.slice(5, 6)?.map((category: string) => (
-              <p>{category}</p>
-            ))}
-          </button>
-          <button className="buttonCategory rounded-full">
-            {categoriesData.slice(6, 7)?.map((category: string) => (
-              <p>{category}</p>
-            ))}
-          </button>
+        {categoriesData.slice(0, 6)?.map((categories: string[], index: number) => (
+            <button key={index} className="buttonCategory rounded-full">
+              <p>{categories}</p>
+            </button>
+          ))}
         </div>
         <div>
           <select name="selectCategory" id="selectCategory" className='buttonCategory rounded-full'>
@@ -76,7 +46,7 @@ function App() {
                 <p id='priceText'>$ {product.price}</p>
               </div>
 
-              <a href='./public/product.html'>
+              <a id="itemButton" href={`./public/product.html?id=${product.id}`}>
                 <button className="buttonViewMore rounded-full">
                   View more <img src="./src/images/arrowIcon.svg" alt="arrowIcon" />
                 </button>
