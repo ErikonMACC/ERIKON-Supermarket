@@ -22,3 +22,8 @@ export async function getCategories() {
     const response = await api.get<{ category: string[] }>('/products/category-list')
     return response.data
 }
+
+export async function getProductsDetails(id : string) {
+    const response = await api.get<{products: Product[]}>(`/products/${id}`)
+    return response.data.products
+}

@@ -1,61 +1,22 @@
 import('tailwindcss')
-import { getProducts, getCategories } from './api/get-products'
-import { useQuery } from 'react-query'
+import { Outlet , useNavigate  } from 'react-router-dom';
+import Navbar from './components/navBar';
+import Footer from './components/footer';
+import { useEffect } from 'react';
+
 
 function App() {
+  const navigate = useNavigate();
 
-  const { data: productsData, isLoading: productsLoading } = useQuery(['products'], getProducts);
-  const { data: categoriesData, isLoading: categoriesLoading } = useQuery(['categories'], getCategories);
-  
-
-  if (productsLoading || categoriesLoading) {
-    return <div>Loading...</div>
-  }
-  if (!categoriesData) {
-    return <div>No categories found.</div>;
-  }
-
+  useEffect(() => {
+    navigate('productList')
+  }, [navigate])
 
   return (
     <>
-      <nav className='container mx-auto flex items-center gap-2 navCategories'>
-        <div>
-        {categoriesData.slice(0, 6)?.map((categories: string[], index: number) => (
-            <button key={index} className="buttonCategory rounded-full">
-              <p>{categories}</p>
-            </button>
-          ))}
-        </div>
-        <div>
-          <select name="selectCategory" id="selectCategory" className='buttonCategory rounded-full'>
-            <option value="" selected disabled>Filter by:</option>
-            {categoriesData?.map((category: string, index: number) => (
-              <option key={index} value={category}>{category}</option>
-            ))}
-          </select>
-        </div>
-      </nav>
-      <p className="title container mx-auto">All Items</p>
-      <div className="container mx-auto grid grid-cols-4 flex items-center gap-8">
-        {productsData?.map((product: { id: number; title: string; raiting: number; price: number; discountPercentage: number; stock: number; brand: string; availabilityStatus: string; images: string[]; }) => (
-          <div className='itemCard' key={product.id}>
-            <img src={product.images[0]} alt={product.title} className='imageItem'></img>
-            <div className="box">
-              <div className="boxText">
-                <p id='name'>{product.title}</p>
-                <p id='priceText'>$ {product.price}</p>
-              </div>
-
-              <a id="itemButton" href={`./public/product.html?id=${product.id}`}>
-                <button className="buttonViewMore rounded-full">
-                  View more <img src="./src/images/arrowIcon.svg" alt="arrowIcon" />
-                </button>
-              </a>
-              
-            </div>
-          </div>
-        ))}
-      </div>
+      <Navbar />
+      <Outlet />
+      <Footer />
     </>
   );
 }
