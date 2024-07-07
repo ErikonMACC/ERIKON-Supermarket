@@ -76,6 +76,7 @@ button:focus-visible {
   background-color: #DBE2EF;
   background-position: 5px;
   background-size: 20px;
+  height: 6vh;
 }
 
 

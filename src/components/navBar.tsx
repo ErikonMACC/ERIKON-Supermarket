@@ -5,7 +5,7 @@ const Navbar = () => {
         <header className="p-4">
         <div className="container mx-auto grid grid-cols-12 flex items-center gap-4">
 
-          <Link to="/" className="col-span-3 flex items-center">
+          <Link to="/productList" className="col-span-3 flex items-center">
             <img src="../src/images/logo.png" alt="Logo" className="h-15" />
           </Link>
 

@@ -1,20 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: #000000;
-  background-color: var(--quinary-color);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   --primary-color: #0E243F;
   --secondary-color: #3F72AF;
   --terniary-color: #8CB7EC;
@@ -22,67 +6,119 @@
   --quinary-color: #F9F7F7;
 }
 
-header {
-  background-color: var(--terniary-color);
+.imageProduct img{
+  height: 70vh;
+  background-color: #ebebeb;
+  border-radius: 30px;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  place-items: center;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-#root {
-  width: 100%;
-  height: 100%;
-}
-
-.searchBar{
-  width: 100%;
-  padding-left: 30px;
-  background: url(./images/searchIcon.svg) no-repeat left;
-  background-color: #DBE2EF;
-  background-position: 5px;
-  background-size: 20px;
-}
-
-
-.button {
+.imageProduct {
   display: flex;
-  align-items: center;
+  justify-content: flex-end;
+  align-content: flex-start;
+}
+
+.textBox {
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  height: 70vh;
+}
+
+.textBox .text {
+  width: 100%;
+}
+
+.textBox .title , .description .title, .reviews .title{
+  font-size: 40px;
+  font-family: "Montserrat";
+  font-weight: 700;
+}
+
+.textBox .textOne, .descriptionText{
+  font-size: 18px;
+  font-family: "Roboto";
+}
+
+.textBox .textTwo {
+  font-size: 26px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  color: var(--primary-color);
+  margin-bottom: 2vh;
+}
+
+.textBox .textThree {
+  font-size: 34px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  color: var(--primary-color);
+  margin-top: 2vh;
+  margin-bottom: -0.9vh;
+}
+
+.buttonOne, .buttonTwo, .buttons {
+  width: 100%;
+}
+
+.buttonBuy, .buttonCart {
+  border-radius: 15px;
+  height: 10vh;
+  width: 55%;
+  font-size: 26px;
+}
+
+.buttonBuy {
+  margin-top: 5.4vh;
+  margin-bottom: 1vh;
   background-color: var(--secondary-color);
-  height: 45px;
-  padding: 0;
+  color: var(--quaternary-color);
+}
+
+.buttonCart {
+  margin-top: 1vh;
+  margin-bottom: 2.5vh;
+  background-color: var(--quaternary-color);
+}
+
+.productTop {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.descriptionText {
+  margin-top: -30px;
+}
+
+.description {
+  padding: 30px 0px;
+}
+
+.review {
+background-color: var(--quaternary-color);
+min-height: 250px;
+border-radius: 15px;
+}
+
+.review .boxText {
+  margin: 20px;
+}
+
+.review{
+  font-family: "Roboto";
+}
+
+.name {
+  font-size: 26px;
+  font-weight: 600;
+}
+.email {
+  font-size: 14px;
+  margin-top: -5px;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+.rating {
+  font-size: 20px;
+  font-weight: 500;
 }
