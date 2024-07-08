@@ -10,6 +10,8 @@ const queryClient = new QueryClient()
 import ProductList from "./routes/productList.tsx"
 import ProductDetail from "./routes/product.tsx"
 import ErrorPage from './routes/errorPage.tsx'
+import ProductCategoryList from './routes/productCategoryList.tsx'
+import SearchedProductList from './routes/searchedProductList.tsx'
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
       {
         path:"/productList/:id",
         element: <ProductDetail />
+      },
+      {
+        path:"/productList/categories/:category",
+        element: <ProductCategoryList />
+      },
+      {
+        path:"/productList/searched/:search",
+        element: <SearchedProductList />
       }
     ]
   }
