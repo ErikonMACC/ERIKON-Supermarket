@@ -50,7 +50,7 @@ function ProductList() {
       </nav >
       <p className="title container mx-auto">Principal Items</p>
       <div className="container mx-auto grid grid-cols-4 flex items-center gap-8">
-        {productsData?.map((product: { id: number; title: string; rating: number; price: number; discountPercentage: number; stock: number; brand: string; availabilityStatus: string; images: string[]; }) => (
+        {productsData && productsData?.map((product: { id: number; title: string; rating: number; price: number; discountPercentage: number; stock: number; brand: string; availabilityStatus: string; images: string[]; }) => (
           <div className='itemCard' key={product.id}>
             <img src={product.images[0]} alt={product.title} className='imageItem'></img>
             <div className="box">

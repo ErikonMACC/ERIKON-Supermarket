@@ -1,4 +1,4 @@
-import { api } from "../lib/axios";
+import { api } from "../lib/axios.ts";
 
 export type Product = {
     id: number;
@@ -16,7 +16,7 @@ export type Product = {
 
 
 export async function getProducts() {
-    const response = await api.get<{ products: Product[] }>('/products')
+    const response = await api.get<{ products: Product[] }>('/products?limit=52&skip=3')
     return response.data?.products
 }
 
