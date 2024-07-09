@@ -1,4 +1,4 @@
-import { api } from "../lib/axios";
+import { api } from "../lib/axios.ts";
 
 export type Product = {
     id: number;
@@ -14,16 +14,9 @@ export type Product = {
     images: string[];
 }
 
-export type Review = {
-    reviewerName: string,
-    reviewerEmail: string,
-    rating: number,
-    comment: string;
-}
-
 
 export async function getProducts() {
-    const response = await api.get<{ products: Product[] }>('/products')
+    const response = await api.get<{ products: Product[] }>('/products?limit=52&skip=3')
     return response.data?.products
 }
 
@@ -35,4 +28,14 @@ export async function getCategories() {
 export async function getProductsDetails(id : string) {
     const response = await api.get<Product>(`/product/${id}`)
     return response.data
+}
+
+export async function getProductsByCategory(category : string) {
+    const response = await api.get<{ products: Product[] }>(`/products/category/${category}`)
+    return response.data?.products
+}
+
+export async function getProductsBySearch(search : string) {
+    const response = await api.get<{ products: Product[] }>(`/products/search?q=${search}`)
+    return response.data?.products
 }
